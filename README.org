@@ -1,0 +1,37 @@
+* nowis-st, simple terminal
+st is a simple terminal emulator for X which sucks less.
+
+Please use =release= branch, =master= branch is just a fork of
+suckless'st repo, other branchs are patch branches.
+
+#+begin_src bash
+git checkout release
+#+end_src
+Branch Description:
++ =release= is the one you should use, which is the result of merging =dev= with the patched versions.
++ =master= branch is in sync with the originaldwm project at https://git.suckless.org/dwm .
++ =dev= is the branch of all development work, you may track this branch to see basic customization for dwm.
++ other branches are just patches.
+
+* Requirements
+In order to build st you need the Xlib header files.
+* Installation
+Edit config.mk to match your local setup (st is installed into
+the /usr/local namespace by default).
+
+Afterwards enter the following command to build and install st (if
+necessary as root):
+
+#+begin_src bash
+make clean install
+#+end_src
+
+* Running st
+If you did not install st with make clean install, you must compile
+the st terminfo entry with the following command:
+
+#+begin_src bash
+tic -sx st.info
+#+end_src
+
+See the man page for additional details.
